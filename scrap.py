@@ -85,7 +85,7 @@ def scrap(html_page, csv_writer):
         for characteristic in card.find_all("div","Text_Text_text Vehiculecard_Vehiculecard_characteristicsItems Text_Text_body2"):     # scrap chracteristic && get the text
             characteristic_text = characteristic.get_text()
             characteristic_list.append(characteristic_text)
-            print(characteristic_text)
+            print(characteristic_text.replace(" ", "").replace("km", '').replace('\xa0', ''))
         car_km_new = characteristic_list[1].replace(" ", "").replace("km", '').replace('\xa0', '') #transformation de km in int by function replace
         car_km_new = int(car_km_new)
         characteristic_list[1] = car_km_new
