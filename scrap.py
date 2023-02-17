@@ -5,27 +5,27 @@ import requests #instalation cmd: pip install request
 import csv
 
 
-def user_url(energie, marque, kms_max, kms_min, page, prix_max, prix_min, annees_max, annees_min) :
+def user_url(energy, mark, kms_max, kms_min, page, price_max, price_min, years_max, years_min) :
     '''
     function to create a filter by an url
 
     Parameters:
         enrgie => str
-        marque => str
+        mark => str
         kms_max => str
         kms_min => str
         page => str
-        prix_max => str
-        prix_min => str
-        annees_max => str
-        annees_min => str
+        price_max => str
+        price_min => str
+        years_max => str
+        years_min => str
 
     Return:
         url => str
     '''
 
     url_lacentrale = 'https://www.lacentrale.fr/listing?energies={energy_url}&makesModelsCommercialNames={mark_url}&mileageMax={kms_max_url}&mileageMin={kms_min_url}&options=&page={page_second}&priceMax={price_max_url}&priceMin={price_min_url}&yearMax={years_max_url}&yearMin={years_min_url}'
-    url = url_lacentrale.format(energy_url = energie, mark_url = marque, kms_max_url = kms_max, kms_min_url = kms_min, page_second = page, price_max_url = prix_max, price_min_url = prix_min, years_max_url = annees_max, years_min_url = annees_min) #line is for make the filter & remplace the var 
+    url = url_lacentrale.format(energy_url = energy, mark_url = mark, kms_max_url = kms_max, kms_min_url = kms_min, page_second = page, price_max_url = price_max, price_min_url = price_min, years_max_url = years_max, years_min_url = years_min) #line is for make the filter & remplace the var 
     print(url)
     return url
 
